@@ -6,6 +6,9 @@
   "scripts": {
     "test": "webpack"
   },
+  "bin": {
+    "capri": "bin/capri.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tandrewnichols/capri.git"
@@ -20,7 +23,11 @@
     "routes",
     "rest"
   ],
-  "author": "Andrew Nichols",
+  "author": {
+    "name": "Andrew Nichols",
+    "email": "tandrewnichols@gmail.com",
+    "url": "www.tandrewnichols.me"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tandrewnichols/capri/issues"
