@@ -1,0 +1,29 @@
+{
+  "name": "capri",
+  "version": "1.0.0",
+  "description": "An API-creation client for express apps",
+  "main": "lib/capri.js",
+  "scripts": {
+    "test": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tandrewnichols/capri.git"
+  },
+  "keywords": [
+    "api",
+    "create",
+    "client",
+    "frontend",
+    "generate",
+    "express",
+    "routes",
+    "rest"
+  ],
+  "author": "Andrew Nichols",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tandrewnichols/capri/issues"
+  },
+  "homepage": "https://github.com/tandrewnichols/capri#readme"
+}
