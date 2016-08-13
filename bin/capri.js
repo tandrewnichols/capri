@@ -12,3 +12,5 @@ program
     var capri = require('../lib/capri');
     capri.run(options);
   });
+
+program.parse(process.argv);
