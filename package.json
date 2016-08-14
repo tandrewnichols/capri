@@ -6,13 +6,14 @@
   "scripts": {
     "test": "mocha test/**/*.js",
     "test:watch": "npm test -- --watch --reporter dot",
-    "pretest": "jshint lib/ bin/ --config .jshintrc --reporter=node_modules/jshint-stylish",
+    "pretest": "eslint lib/**/*.js bin/**/*.js --config .eslint.json",
     "travis": "node scripts/matches v4 && npm run test:coverage || npm run test",
     "cover": "istanbul cover --include-all-sources -x scripts/** -x lib/log.js _mocha -- test/**/*.js",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "test:coverage": "npm run cover && npm run codeclimate",
     "cover:html": "npm run cover && npm run open:coverage",
-    "open:coverage": "open coverage/lcov-report/index.html"
+    "open:coverage": "open coverage/lcov-report/index.html",
+    "start": "bin/capri.js start"
   },
   "bin": {
     "capri": "bin/capri.js"
@@ -46,13 +47,16 @@
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
     "cross-spawn": "^4.0.0",
+    "detect-port": "^1.0.0",
     "express": "^4.14.0",
-    "find-up": "^1.1.2"
+    "find-up": "^1.1.2",
+    "opn": "^4.0.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
+    "eslint": "^3.3.0",
     "istanbul": "^0.4.4",
-    "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.1",
     "mocha": "^2.5.3",
     "mocha-clean": "^1.0.0",
     "mocha-given": "^0.1.3",

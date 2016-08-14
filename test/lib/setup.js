@@ -140,7 +140,7 @@ describe('lib/setup', function() {
       beforeEach(function() {
         fs.writeFile.withArgs('package-with-no-scripts', JSON.stringify({
           scripts: {
-            capri: 'capri'
+            capri: 'capri start'
           }
         }, null, 2), sinon.match.func).callsArgWith(2, null)
       });
@@ -173,7 +173,7 @@ describe('lib/setup', function() {
       beforeEach(function() {
         fs.writeFile.withArgs('package-with-no-scripts', JSON.stringify({
           scripts: {
-            capri: 'capri -p 9'
+            capri: 'capri -p 9 start'
           }
         }, null, 2), sinon.match.func).callsArgWith(2, null)
       });

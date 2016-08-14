@@ -1,6 +1,8 @@
 engines:
   eslint:
     enabled: true
+    config:
+      config: '.eslint.codeclimate.yml'
   duplication:
     enabled: true
     config:
