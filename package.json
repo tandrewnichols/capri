@@ -8,10 +8,11 @@
     "test:watch": "npm test -- --watch --reporter dot",
     "pretest": "jshint lib/ bin/ --config .jshintrc --reporter=node_modules/jshint-stylish",
     "travis": "node scripts/matches v4 && npm run test:coverage || npm run test",
-    "cover": "istanbul cover _mocha -- test/**/*.js",
+    "cover": "istanbul cover --include-all-sources -x scripts/** -x lib/log.js _mocha -- test/**/*.js",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "test:coverage": "npm run cover && npm run codeclimate",
-    "cover:html": "npm run cover && open coverage/lcov-report/index.html"
+    "cover:html": "npm run cover && npm run open:coverage",
+    "open:coverage": "open coverage/lcov-report/index.html"
   },
   "bin": {
     "capri": "bin/capri.js"
