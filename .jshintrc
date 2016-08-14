@@ -1,0 +1,16 @@
+{
+  "camelcase": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "newcap": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "trailing": true,
+  "loopfunc": false,
+  "node": true,
+  "browser": true,
+  "devel": true,
+  "nonstandard": true,
+  "esversion": 6
+}

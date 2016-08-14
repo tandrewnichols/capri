@@ -5,7 +5,9 @@
   "main": "lib/capri.js",
   "scripts": {
     "test": "mocha test/**/*.js",
-    "test:watch": "npm test -- --watch --reporter dot"
+    "test:watch": "npm test -- --watch --reporter dot",
+    "jshint": "jshint lib/ bin/ --config .jshintrc --reporter=node_modules/jshint-stylish",
+    "travis": "npm run jshint && npm test"
   },
   "bin": {
     "capri": "bin/capri.js"
@@ -43,6 +45,8 @@
     "find-up": "^1.1.2"
   },
   "devDependencies": {
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.1",
     "mocha": "^2.5.3",
     "mocha-clean": "^1.0.0",
     "mocha-given": "^0.1.3",
