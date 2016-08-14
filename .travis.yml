@@ -1,5 +1,10 @@
 language: node_js
 sudo: false
+before_install:
+  - "export CODECLIMATE_REPO_TOKEN=48e99897cdd0c3c9c6d8f3789d5108397e6aef3c7856952cdfc3fc5fcd8b720b"
+install:
+  - "npm install codeclimate-test-reporter -g"
+  - "npm install"
 script:
   - "npm run travis"
 node_js:

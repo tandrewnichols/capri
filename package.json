@@ -7,7 +7,11 @@
     "test": "mocha test/**/*.js",
     "test:watch": "npm test -- --watch --reporter dot",
     "jshint": "jshint lib/ bin/ --config .jshintrc --reporter=node_modules/jshint-stylish",
-    "travis": "npm run jshint && npm test"
+    "travis": "npm run jshint && npm run check",
+    "cover": "istanbul cover _mocha -- test/**/*.js",
+    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
+    "test:coverage": "npm run cover && npm run codeclimate",
+    "check": "node scripts/matches v4 && npm run test:coverage || npm run test"
   },
   "bin": {
     "capri": "bin/capri.js"
@@ -45,6 +49,7 @@
     "find-up": "^1.1.2"
   },
   "devDependencies": {
+    "istanbul": "^0.4.4",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.1",
     "mocha": "^2.5.3",
