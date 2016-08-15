@@ -13,7 +13,7 @@
     "test:coverage": "npm run cover && npm run codeclimate",
     "cover:html": "npm run cover && npm run open:coverage",
     "open:coverage": "open coverage/lcov-report/index.html",
-    "start": "bin/capri.js start"
+    "capri": "bin/capri.js start"
   },
   "bin": {
     "capri": "bin/capri.js"
