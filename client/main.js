@@ -1,1 +1,1 @@
-console.log('aslkdjf');
+import './main.less'
