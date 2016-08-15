@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    require.resolve('./client/main.js'),
+    require.resolve('./client/app.js'),
     require.resolve('webpack-dev-server/client') + '?/',
     require.resolve('webpack/hot/dev-server')
   ],
@@ -15,7 +15,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: ['babel'],
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']
