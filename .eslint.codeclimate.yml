@@ -10,7 +10,7 @@ settings:
   jsx: true
 
 rules:
-  strict: 0,
+  strict: 0
   quotes:
     - 2
     - "single"
