@@ -1,14 +1,17 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
   "env": {
     "browser": true,
     "node": true,
     "mocha": true,
     "jasmine": true,
     "jquery": true
-  },
-  "ecmaFeatures": {
-    "modules": true,
-    "jsx": true
   },
   "settings": {
     "ecmascript": 6,

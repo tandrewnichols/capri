@@ -13,7 +13,7 @@ module.exports = function(config) {
     browsers: ['Chrome', 'Firefox', 'PhantomJS'],
 
     preprocessors: {
-      'test/react/index.js': ['webpack'] 
+      'test/react/index.js': ['webpack']
     },
 
     logLevel: config.LOG_WARN,

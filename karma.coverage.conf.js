@@ -1,6 +1,5 @@
 var base = require('./karma.base.js');
 var _ = require('lodash');
-var path = require('path');
 
 module.exports = function(config) {
   var conf = base(config);
@@ -19,7 +18,7 @@ module.exports = function(config) {
   // Unable to merge a single browser in this way, because _.merge
   // simple sets conf.browsers[0] to PhantomJS, but leaves the others
   // (Firefox and the original PhantomJS) where they are, so you end up
-  // with ['PhantomJS', 'Firefox', 'PhantomJS']. 
+  // with ['PhantomJS', 'Firefox', 'PhantomJS'].
   conf.browsers = ['PhantomJS'];
   config.set(conf);
 };
