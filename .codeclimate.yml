@@ -2,7 +2,7 @@ engines:
   eslint:
     enabled: true
     config:
-      config: '.eslint.codeclimate.yml'
+      config: '.eslint.codeclimate.json'
   duplication:
     enabled: true
     config:

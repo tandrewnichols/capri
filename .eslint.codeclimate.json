@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "jasmine": true,
+    "jquery": true
+  },
+  "settings": {
+    "ecmascript": 6,
+    "jsx": true
+  },
+  "rules": {
+    "strict": 0,
+    "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "no-undef": 2,
+    "no-unused-vars": [2, {"args": "none"}],
+    "no-trailing-spaces": 2,
+    "no-loop-func": 2,
+    "no-underscore-dangle": 0,
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "no-octal": 0
+  }
+}
