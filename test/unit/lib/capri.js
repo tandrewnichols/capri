@@ -14,7 +14,7 @@ describe('lib/capri', function() {
   };
   var webpack = sinon.stub();
 
-  var subject = require('proxyquire').noCallThru()('../../lib/capri', {
+  var subject = require('proxyquire').noCallThru()('../../../lib/capri', {
     child_process: childProcess,
     opn: opn,
     'detect-port': detectPort,

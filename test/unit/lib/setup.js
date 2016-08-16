@@ -19,7 +19,7 @@ describe('lib/setup', function() {
     writeFile: sinon.stub()
   };
 
-  var subject = require('proxyquire').noCallThru()('../../lib/setup', {
+  var subject = require('proxyquire').noCallThru()('../../../lib/setup', {
     chalk: chalk,
     './log': log,
     'cross-spawn': spawn,
@@ -128,7 +128,7 @@ describe('lib/setup', function() {
     context('when root is unset', function() {
       it('finds the closest package.json', function(done) {
         subject.getRoot({}, function(err, options) {
-          options.root.should.equal(path.resolve(__dirname, '../../package.json'));
+          options.root.should.equal(path.resolve(__dirname, '../../../package.json'));
           done();
         });
       });

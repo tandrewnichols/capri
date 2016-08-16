@@ -8,18 +8,18 @@
     "test:unit": "mocha test/unit/**/*.js",
     "test:react": "karma start",
     "test:watch": "npm run test:unit -- --watch --reporter dot",
-    "pretest": "eslint lib/**/*.js bin/**/*.js --config .eslint.json",
+    "pretest": "eslint lib/**/*.js --config .eslint.json",
     "travis": "node scripts/matches v4 && npm run test:coverage || npm run test:unit",
-    "cover:unit": "istanbul cover --dir coverage/unit --include-all-sources -x scripts/** -x lib/log.js _mocha -- test/unit/**/*.js",
-    "cover:react": "karma start ./karma.coverage.conf.js",
+    "cover:unit": "istanbul cover --root ./lib --dir coverage/unit -x=scripts/** -x=lib/log.js -x=client/** _mocha -- test/unit/**/*.js",
+    "cover:react": "NODE_ENV=test karma start ./karma.coverage.conf.js",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "test:coverage": "npm run cover:unit && npm run codeclimate",
-    "cover:html": "npm run cover && npm run open:unit",
     "open:unit": "open coverage/unit/lcov-report/index.html",
-    "capri": "bin/capri.js start"
+    "open:react": "open coverage/react/html/index.html",
+    "capri": "lib/cli.js start"
   },
   "bin": {
-    "capri": "bin/capri.js"
+    "capri": "lib/cli.js"
   },
   "repository": {
     "type": "git",
@@ -69,6 +69,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^2.0.0",
     "enzyme": "^2.4.1",
     "eslint": "^3.3.0",
     "ignore-loader": "^0.1.1",
@@ -82,6 +83,7 @@
     "karma-mocha-reporter": "^2.1.0",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-webpack": "^1.8.0",
+    "lodash": "^4.15.0",
     "mocha": "^2.5.3",
     "mocha-clean": "^1.0.0",
     "proxyquire": "^1.7.10",
@@ -91,5 +93,12 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": ["istanbul"]
+      }
+    }
   }
 }

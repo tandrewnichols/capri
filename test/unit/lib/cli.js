@@ -1,7 +1,7 @@
 var sinon = require('sinon');
 require('should');
 
-describe('bin/capri', function() {
+describe('lib/cli', function() {
   var argv = null;
   var capri = {
     run: sinon.stub()
@@ -27,7 +27,7 @@ describe('bin/capri', function() {
       });
 
       it('calls setup.start with normal options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
@@ -48,7 +48,7 @@ describe('bin/capri', function() {
       });
 
       it('calls setup.start with extra options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
@@ -68,7 +68,7 @@ describe('bin/capri', function() {
       });
 
       it('calls setup.start with the same extra options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
@@ -85,7 +85,7 @@ describe('bin/capri', function() {
       });
 
       it('calls capri.run with normal options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
@@ -100,7 +100,7 @@ describe('bin/capri', function() {
       });
 
       it('calls capri.run with extra options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
@@ -115,7 +115,7 @@ describe('bin/capri', function() {
       });
 
       it('calls capri.run with the same extra options', function() {
-        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../bin/capri', {
+        var subject = require('proxyquire').noPreserveCache().noCallThru()('../../../lib/cli', {
           '../lib/setup': setup,
           '../lib/capri': capri
         });
