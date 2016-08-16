@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    require.resolve('./client/app.js'),
+    require.resolve('./client/index.js'),
     require.resolve('webpack-dev-server/client') + '?/',
     require.resolve('webpack/hot/dev-server')
   ],
