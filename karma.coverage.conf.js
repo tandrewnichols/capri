@@ -11,7 +11,8 @@ module.exports = function(config) {
       dir: 'coverage/react',
       reporters: [
         { type: 'html', subdir: 'html' },
-        { type: 'lcov', subdir: 'lcov' }
+        { type: 'lcov', subdir: 'lcov' },
+        { type: 'json', subdir: '.', file: 'coverage.json' }
       ]
     }
   });
