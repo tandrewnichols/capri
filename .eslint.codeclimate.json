@@ -6,6 +6,10 @@
     "jasmine": true,
     "jquery": true
   },
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
   "settings": {
     "ecmascript": 6,
     "jsx": true
