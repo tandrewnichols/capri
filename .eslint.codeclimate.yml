@@ -14,20 +14,17 @@ rules:
   quotes:
     - 2
     - "single"
-    -
-      avoidEscape: true
+    - avoidEscape: true
       allowTemplateLiterals: true
   no-undef: 2
   no-unused-vars: 
     -2
-    -
-      args: none
+    - args: none
   no-trailing-spaces: 2
   no-loop-func: 2
   no-underscore-dangle: 0
   indent:
     - 2
     - 2
-    -
-      SwitchCase: 1
+    - SwitchCase: 1
   no-octal: 0
