@@ -26,7 +26,7 @@
     "quotes": ["error", "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
     "no-undef": "error",
     "no-unused-vars": ["error", {"args": "none"}],
-    "jsx-uses-vars": true,
+    "react/jsx-uses-vars": 2,
     "no-trailing-spaces": "error",
     "no-loop-func": "error",
     "no-underscore-dangle": "off",
