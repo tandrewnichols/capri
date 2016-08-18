@@ -1,5 +1,5 @@
 var path = require('path');
-var appSrc = path.resolve(__dirname, 'client/');
+var appSrc = path.resolve(__dirname, 'app/');
 
 module.exports = function(config) {
   return {
@@ -43,7 +43,7 @@ module.exports = function(config) {
         extentions: ['', '.js', '.json'],
         alias: {
           src: appSrc,
-          components: appSrc + 'components'
+          components: appSrc + '/components'
         }
       },
       externals: {

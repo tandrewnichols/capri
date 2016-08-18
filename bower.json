@@ -1,0 +1,30 @@
+{
+  "name": "capri",
+  "description": "An API-creation client for express apps",
+  "main": "lib/capri.js",
+  "authors": [
+    "Andrew Nichols"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "create",
+    "client",
+    "frontend",
+    "generate",
+    "express",
+    "routes",
+    "rest"
+  ],
+  "homepage": "https://github.com/tandrewnichols/capri",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

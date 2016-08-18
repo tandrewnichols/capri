@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    require.resolve('./client/index.js'),
+    require.resolve('./app/index.js'),
     require.resolve('webpack-dev-server/client') + '?/',
     require.resolve('webpack/hot/dev-server')
   ],
@@ -24,6 +24,10 @@ module.exports = {
       {
         test: /\.less$/,
         loaders: ['style', 'css', 'less']
+      },
+      { 
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file'
       }
     ]
   },
