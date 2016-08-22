@@ -1,8 +1,13 @@
 import React from 'react'
+import DrawerToggle from '../containers/drawer-toggle'
 
 class App extends React.Component {
   render() {
-    return <h2>Capri</h2>
+    return (
+      <div>
+        <DrawerToggle/>
+      </div>
+    )
   }
 }
 
