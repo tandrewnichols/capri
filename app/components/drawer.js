@@ -3,7 +3,9 @@ import HamburgerButton from './hamburger-button'
 
 class Drawer extends React.Component {
   render() {
-    return <HamburgerButton onClick={() => this.props.onDrawerToggle()}></HamburgerButton>
+    return (
+      <HamburgerButton btnType="default" onClick={this.props.onDrawerToggle}></HamburgerButton>
+    )
   }
 }
 
