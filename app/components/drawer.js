@@ -4,7 +4,12 @@ import HamburgerButton from './hamburger-button'
 class Drawer extends React.Component {
   render() {
     return (
-      <HamburgerButton btnType="default" onClick={this.props.onDrawerToggle}></HamburgerButton>
+      <div>
+        <nav className="bg-gray-darker">
+
+        </nav>
+        <HamburgerButton btnType="default" onClick={this.props.onDrawerToggle}></HamburgerButton>
+      </div>
     )
   }
 }
