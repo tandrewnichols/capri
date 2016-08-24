@@ -4,8 +4,11 @@ import DrawerToggle from '../containers/drawer-toggle'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="height100">
         <DrawerToggle/>
+        <div className="height100 bg-gray-lighter page-content">
+          <h2 className="text-center">Capri</h2>
+        </div>
       </div>
     )
   }

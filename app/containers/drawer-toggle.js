@@ -2,13 +2,15 @@ import { connect } from 'react-redux'
 import Drawer from '../components/drawer'
 
 const mapStateToProps = (state) => {
-  return state;
+  return {
+    open: state.drawer.open  
+  };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onToggleDrawer: () => {
-      dispatch()
+      dispatch({ type: 'TOGGLE_DRAWER' })
     }
   }
 }
