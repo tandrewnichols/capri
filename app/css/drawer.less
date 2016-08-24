@@ -1,4 +1,8 @@
 /* drawer menu pane - note the 0px width */
+.drawer-title {
+  border: 1px solid @gray-light;
+}
+
 .drawer-transition {
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
@@ -30,15 +34,22 @@
       margin-left: 300px;
     }
   }
+  & .list-group-item {
+    background-color: inherit;
+    color: @white;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid @gray-light;
+    & + .list-group-item {
+      border-bottom: 0;
+    }
+    &:hover {
+      background-color: inherit;
+    }
+  }
 }
 /* actual page content pane */
 
 .page-content {
-  margin-left: 0px;
   width: 100%;
-  height: calc(100% - 50px);
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px;
 }

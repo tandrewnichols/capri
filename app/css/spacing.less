@@ -1,0 +1,66 @@
+// Define size variables
+@spacing-tiny: 5px;
+@spacing-small: 10px;
+@spacing-medium: 15px;
+@spacing-large: 20px;
+@spacing-xlarge: 30px;
+@spacing-jumbo: 40px;
+
+/* Directional mixins - take a type (padding or margin) and an amount */
+.spacing-left(@type; @amt) { @{type}-left: @amt; }
+.spacing-right(@type; @amt) { @{type}-right: @amt; }
+.spacing-top(@type; @amt) { @{type}-top: @amt; }
+.spacing-bottom(@type; @amt) { @{type}-bottom: @amt; }
+.spacing-vertical(@type; @amt) { @{type}-top: @amt; @{type}-bottom: @amt; }
+.spacing-horizontal(@type; @amt) { @{type}-left: @amt; @{type}-right: @amt; }
+.spacing-north(@type; @amt) { @{type}-left: @amt; @{type}-right: @amt; @{type}-top: @amt; }
+.spacing-east(@type; @amt) { @{type}-right: @amt; @{type}-bottom: @amt; @{type}-top: @amt; }
+.spacing-west(@type; @amt) { @{type}-bottom: @amt; @{type}-left: @amt; @{type}-top: @amt; }
+.spacing-south(@type; @amt) { @{type}-left: @amt; @{type}-right: @amt; @{type}-bottom: @amt; }
+.spacing-north-east(@type; @amt) { @{type}-top: @amt; @{type}-right: @amt; }
+.spacing-south-east(@type; @amt) { @{type}-bottom: @amt; @{type}-right: @amt; }
+.spacing-north-west(@type; @amt) { @{type}-top: @amt; @{type}-left: @amt; }
+.spacing-south-west(@type; @amt) { @{type}-bottom: @amt; @{type}-left: @amt; }
+.spacing-all(@type; @amt) { padding: @amt; }
+
+/* Create all the directional combinations for this size */
+.createSpacingClasses(@amt; @let) {
+  .pl@{let} { .spacing-left(padding; @amt); }
+  .ml@{let} { .spacing-left(margin; @amt); }
+  .pr@{let} { .spacing-right(padding; @amt); }
+  .mr@{let} { .spacing-right(margin; @amt); }
+  .pt@{let} { .spacing-top(padding; @amt); }
+  .mt@{let} { .spacing-top(margin; @amt); }
+  .pb@{let} { .spacing-bottom(padding; @amt); }
+  .mb@{let} { .spacing-bottom(margin; @amt); }
+  .ph@{let} { .spacing-horizontal(padding; @amt); }
+  .mh@{let} { .spacing-horizontal(margin; @amt); }
+  .pv@{let} { .spacing-vertical(padding; @amt); }
+  .mv@{let} { .spacing-vertical(margin; @amt); }
+  .pn@{let} { .spacing-north(padding; @amt); }
+  .mn@{let} { .spacing-north(margin; @amt); }
+  .ps@{let} { .spacing-south(padding; @amt); }
+  .ms@{let} { .spacing-south(margin; @amt); }
+  .pe@{let} { .spacing-east(padding; @amt); }
+  .me@{let} { .spacing-east(margin; @amt); }
+  .pw@{let} { .spacing-west(padding; @amt); }
+  .mw@{let} { .spacing-west(margin; @amt); }
+  .pne@{let} { .spacing-north-east(padding; @amt); }
+  .mne@{let} { .spacing-north-east(margin; @amt); }
+  .pnw@{let} { .spacing-north-west(padding; @amt); }
+  .mnw@{let} { .spacing-north-west(margin; @amt); }
+  .pse@{let} { .spacing-south-east(padding; @amt); }
+  .mse@{let} { .spacing-south-east(margin; @amt); }
+  .psw@{let} { .spacing-south-west(padding; @amt); }
+  .msw@{let} { .spacing-south-west(margin; @amt); }
+  .pa@{let} { .spacing-all(padding; @amt); }
+  .ma@{let} { .spacing-all(margin; @amt); }
+}
+
+/* The starting point. Create padding and margin classes for each direction for each size. */
+.createSpacingClasses(@spacing-tiny; t);
+.createSpacingClasses(@spacing-small; s);
+.createSpacingClasses(@spacing-medium; m);
+.createSpacingClasses(@spacing-large; l);
+.createSpacingClasses(@spacing-xlarge; x);
+.createSpacingClasses(@spacing-jumbo; j);
