@@ -1,4 +1,5 @@
 var sinon = require('sinon');
+require('should');
 
 describe('lib/capri', function() {
   var childProcess = {
@@ -13,6 +14,9 @@ describe('lib/capri', function() {
     prompt: sinon.stub()
   };
   var webpack = sinon.stub();
+  var collector = {
+    createManifest: sinon.stub()
+  };
 
   var subject = require('proxyquire').noCallThru()('../../../lib/capri', {
     child_process: childProcess,
@@ -20,7 +24,8 @@ describe('lib/capri', function() {
     'detect-port': detectPort,
     './log': log,
     inquirer: inquirer,
-    webpack: webpack
+    webpack: webpack,
+    './collector': collector
   });
 
   describe('.run', function() {
@@ -49,6 +54,7 @@ describe('lib/capri', function() {
     context('with no error', function() {
       beforeEach(function() {
         subject.detect.withArgs({}, sinon.match.func).callsArgWith(1, null);
+        collector.createManifest.withArgs({}, sinon.match.func).callsArgWith(1, null);
         subject.setupCompiler.withArgs({}).returns('compiler');
       });
 

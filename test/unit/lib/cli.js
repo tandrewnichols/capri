@@ -44,7 +44,7 @@ describe('lib/cli', function() {
 
     context('with short options', function() {
       beforeEach(function() {
-        process.argv = ['node', 'capri', 'init', '-S', '-r', 'foo', '-H', '-p', '4']
+        process.argv = ['node', 'capri', 'init', '-S', '-b', 'foo', '-H', '-p', '4', '-r', 'foo/routes', '-m', 'bar/middleware'];
       });
 
       it('calls setup.start with extra options', function() {
@@ -53,7 +53,7 @@ describe('lib/cli', function() {
           '../lib/capri': capri
         });
 
-        setup.start.calledWith(sinon.match({ save: false, root: 'foo', hook: false, port: '4' })).should.be.true()
+        setup.start.calledWith(sinon.match({ save: false, base: 'foo', hook: false, port: '4', routes: 'foo/routes', middleware: 'bar/middleware' })).should.be.true();
 
         subject.removeAllListeners('init');
         subject.removeAllListeners('start');
@@ -64,7 +64,7 @@ describe('lib/cli', function() {
 
     context('with long options', function() {
       beforeEach(function() {
-        process.argv = ['node', 'capri', 'init', '--no-save', '--root', 'foo', '--no-hook', '--port', '4']
+        process.argv = ['node', 'capri', 'init', '--no-save', '--base', 'foo', '--no-hook', '--port', '4', '--routes', 'foo/routes', '--middleware', 'bar/middleware'];
       });
 
       it('calls setup.start with the same extra options', function() {
@@ -73,7 +73,7 @@ describe('lib/cli', function() {
           '../lib/capri': capri
         });
 
-        setup.start.calledWith(sinon.match({ save: false, root: 'foo', hook: false, port: '4' })).should.be.true()
+        setup.start.calledWith(sinon.match({ save: false, base: 'foo', hook: false, port: '4', routes: 'foo/routes', middleware: 'bar/middleware' })).should.be.true();
       });
     });
   });
@@ -96,7 +96,7 @@ describe('lib/cli', function() {
 
     context('with short options', function() {
       beforeEach(function() {
-        process.argv = ['node', 'capri', 'start', '-p', '4'];
+        process.argv = ['node', 'capri', 'start', '-p', '4', '-r', 'foo', '-m', 'bar'];
       });
 
       it('calls capri.run with extra options', function() {
@@ -105,13 +105,13 @@ describe('lib/cli', function() {
           '../lib/capri': capri
         });
 
-        capri.run.calledWith(sinon.match({ port: '4' })).should.be.true()
+        capri.run.calledWith(sinon.match({ port: '4', routes: 'foo', middleware: 'bar'})).should.be.true()
       });
     });
 
     context('with long options', function() {
       beforeEach(function() {
-        process.argv = ['node', 'capri', 'start', '--port', '4'];
+        process.argv = ['node', 'capri', 'start', '--port', '4', '--routes', 'foo', '--middleware', 'bar'];
       });
 
       it('calls capri.run with the same extra options', function() {
@@ -120,7 +120,7 @@ describe('lib/cli', function() {
           '../lib/capri': capri
         });
 
-        capri.run.calledWith(sinon.match({ port: '4' })).should.be.true()
+        capri.run.calledWith(sinon.match({ port: '4', routes: 'foo', middleware: 'bar' })).should.be.true()
       });
     });
   });
