@@ -1,12 +1,12 @@
 import React from 'react'
-import NavCategory from './nav-category'
+import NavCategoryToggle from '../containers/nav-category-toggle'
 
 class DrawerNav extends React.Component {
   render() {
     return (
-      <div className="list-group">
-        {this.props.categories.map((category) => {
-          return <NavCategory key={category}>{category}</NavCategory>
+      <div>
+        {this.props.categories.map((category, index, arr) => {
+          return <NavCategoryToggle key={category} last={index === arr.length - 1}>{category}</NavCategoryToggle>
         })}
       </div>
     )
