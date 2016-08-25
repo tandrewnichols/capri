@@ -58,7 +58,7 @@ describe('lib/setup', function() {
 
       it('logs an error about installing', function() {
         subject.start({ foo: 'bar' });
-        chalk.red.calledWith('An error occurred install capri in your application').should.be.true()
+        chalk.red.calledWith('An error occurred installing capri in your application').should.be.true()
       });
     });
 
