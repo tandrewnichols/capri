@@ -32,7 +32,6 @@
 .drawer-item {
   cursor: pointer;
   color: @gray-light;
-  border-bottom: 1px solid @gray-light;
   & .drawer-heading {
     width: 100%;
     text-align: left;
@@ -43,18 +42,16 @@
       padding-left: 15px;
     }
   }
-  & + & {
-    border-bottom: 0
-  }
 }
 .category-details {
-  padding-left: 25px;
+  padding-left: 15px;
   padding-bottom: 0;
   .transition(max-height .25s ease-in-out, padding-bottom .25s ease-in-out;);
   max-height: 0;
   overflow: hidden;
   &.open {
-    max-height: 200px;
+    overflow: scroll;
+    max-height: 500px;
     padding-bottom: 10px;
   }
 }
