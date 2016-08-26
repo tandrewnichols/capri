@@ -9,7 +9,7 @@ class Drawer extends React.Component {
     return (
       <div className={'bg-gray-darker drawer' + (this.props.open ? ' open' : '')}>
         <DrawerTitle>Capri</DrawerTitle>
-        <DrawerNav categories={[ 'Routes', 'Middleware' ]}/>
+        <DrawerNav categories={[ 'routes', 'middleware' ]}/>
         <div className="drawer-toggle">
           <HamburgerButton btnType="default" onClick={this.props.onToggleDrawer}></HamburgerButton>
         </div>

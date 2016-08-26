@@ -1,19 +1,15 @@
 import { connect } from 'react-redux'
 import NavCategory from '../components/nav-category'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  let manifest = ownProps.manifest || state.navCategory.manifest
   return {
-    expand: state.navCategory.expand,
-    manifest: state.navCategory.manifest
+    manifest: manifest[ ownProps.name ]
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    onExpandCategory: (category) => {
-      dispatch({ type: 'EXPAND_CATEGORY', expand: category })
-    }
-  }
+  return {}
 }
 
 const NavCategoryToggle = connect(mapStateToProps, mapDispatchToProps)(NavCategory)
