@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 import reducers from './reducers/index'
 import App from './components/app'
 import './css/main.less'
-import manifest from '../.manifest'
+import manifest from './lib/manifest'
 
 let store = createStore(reducers, {
   drawer: {
