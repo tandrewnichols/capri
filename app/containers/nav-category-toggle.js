@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import NavCategory from '../components/nav-category'
 
 const mapStateToProps = (state) => {
-  state.navCategory = state.navCategory || {}
   return {
-    expand: state.navCategory.expand
+    expand: state.navCategory.expand,
+    manifest: state.navCategory.manifest
   }
 }
 

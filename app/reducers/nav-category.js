@@ -1,8 +1,10 @@
 const category = (state = {}, action) => {
-  console.log(state, action);
   switch (action.type) {
     case 'EXPAND_CATEGORY':
-      return { expand: state.expand === action.expand ? false : action.expand }
+      return {
+        expand: state.expand === action.expand ? false : action.expand,
+        manifest: state.manifest
+      }
     default:
       return state
   }
