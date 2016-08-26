@@ -6,7 +6,7 @@ class DrawerNav extends React.Component {
     return (
       <div>
         {this.props.categories.map((category, index, arr) => {
-          return <NavCategoryToggle name={category} key={category} last={index === arr.length - 1}>{category.charAt(0).toUpperCase() + category.slice(1)}</NavCategoryToggle>
+          return <NavCategoryToggle name={category} key={category}>{category.charAt(0).toUpperCase() + category.slice(1)}</NavCategoryToggle>
         })}
       </div>
     )
