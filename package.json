@@ -18,7 +18,8 @@
     "open:unit": "open coverage/unit/lcov-report/index.html",
     "open:react": "open coverage/react/html/index.html",
     "open:merged": "open coverage/merged/lcov-report/index.html",
-    "capri": "lib/cli.js start"
+    "capri": "lib/cli.js start",
+    "storybook": "start-storybook -p 3000"
   },
   "bin": {
     "capri": "lib/cli.js"
@@ -77,6 +78,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.5.2",
     "babel-eslint": "^6.1.2",
     "babel-plugin-istanbul": "^2.0.0",
     "enzyme": "^2.4.1",
